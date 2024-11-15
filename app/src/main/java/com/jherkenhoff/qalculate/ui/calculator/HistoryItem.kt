@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.jherkenhoff.qalculate.ui.common.mathExpressionFormatter
+import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 
 
 private val HistoryItemShape = RoundedCornerShape(20.dp, 20.dp, 4.dp, 20.dp)
@@ -89,7 +90,7 @@ fun HistoryItem(
                 style = MaterialTheme.typography.bodySmall
             )
             AutoSizeText(
-                text = mathExpressionFormatter(resultText),
+                text = stringToLaTeX(resultText),
                 alignment = Alignment.CenterEnd,
                 style = MaterialTheme.typography.displayMedium,
                 minTextSize = 14.sp,
@@ -109,7 +110,7 @@ private fun DefaultPreview() {
     HistoryItem(
         "1km + 5m",
         "1 kilometer + 5 meter",
-        "1.005 m"
+        "1005 m"
     )
 }
 

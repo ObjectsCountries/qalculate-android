@@ -3,6 +3,8 @@ package com.jherkenhoff.qalculate.ui.calculator
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.getSelectedText
@@ -20,6 +22,7 @@ import com.jherkenhoff.qalculate.domain.AutocompleteResult
 import com.jherkenhoff.qalculate.domain.AutocompleteUseCase
 import com.jherkenhoff.qalculate.domain.CalculateUseCase
 import com.jherkenhoff.qalculate.domain.ParseUseCase
+import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
@@ -62,7 +65,8 @@ class CalculatorViewModel @Inject constructor(
                 LocalDateTime.now(),
                 inputTextFieldValue.text,
                 parsedString,
-                resultString
+                resultString,
+                stringToLaTeX(resultString)
             )
         )
 

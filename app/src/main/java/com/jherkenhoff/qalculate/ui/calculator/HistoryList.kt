@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jherkenhoff.qalculate.data.model.CalculationHistoryItem
+import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -40,7 +41,7 @@ private fun LazyListState.isScrolledToTheEnd() = layoutInfo.visibleItemsInfo.las
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HistroyList(
+fun HistoryList(
     calculationHistory: List<CalculationHistoryItem>,
     modifier: Modifier = Modifier,
     onTextToInput: (String) -> Unit = {}
@@ -142,37 +143,41 @@ private fun DefaultPreview() {
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(10),
             "1 kilometer + 5 meter",
-            "1.005 m",
-            "2 m"
+            "1 kilometer + 5 meter",
+            "1005 m",
+            stringToLaTeX("1005 m")
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m"
+            "2 m",
+            stringToLaTeX("2 m")
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1).minusHours(2),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m"
+            "2 m",
+            stringToLaTeX("2 m")
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusMinutes(20),
             "1km + 5m",
             "1 kilometer + 5 meter",
-            "1.005 m",
+            "1005 m",
+            stringToLaTeX("1005 m")
         )
     )
 
-    HistroyList(
+    HistoryList(
         testCalculationHistory
     )
 }
 @Preview(showBackground = true)
 @Composable
 private fun EmptyPreview() {
-    HistroyList (
+    HistoryList (
         emptyList()
     )
 }

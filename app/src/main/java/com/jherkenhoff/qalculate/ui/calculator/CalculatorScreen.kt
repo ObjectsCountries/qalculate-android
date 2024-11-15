@@ -39,6 +39,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jherkenhoff.qalculate.data.ScreenSettingsRepository
 import com.jherkenhoff.qalculate.data.model.CalculationHistoryItem
 import com.jherkenhoff.qalculate.domain.AutocompleteItem
+import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.runBlocking
 import java.time.LocalDateTime
@@ -113,6 +114,7 @@ fun CalculatorScreenContent(
 
                 },
                 actions = {
+                    SuggestionChip(onClick = { /*TODO*/ }, label = { Text("LATEX") })
                     SuggestionChip(onClick = { /*TODO*/ }, label = { Text("DEG") })
                     SuggestionChip(onClick = { /*TODO*/ }, label = { Text("Exact") })
                     SuggestionChip(onClick = { /*TODO*/ }, label = { Text("Exp.") })
@@ -133,7 +135,7 @@ fun CalculatorScreenContent(
                     .weight(1f),
                 contentAlignment = Alignment.BottomCenter
             ) {
-                HistroyList(
+                HistoryList(
                     calculationHistory,
                     onTextToInput = { onQuickKeyPressed(it, "") }
                 )
@@ -200,24 +202,42 @@ fun CalculatorScreenContent(
 }
 
 
-private val testCalculationHistory = listOf(
-    CalculationHistoryItem(
-        LocalDateTime.now().minusDays(10),
-        "1m + 1m",
-        "1 m + 1 m",
-        "2 m"
-    ),
-    CalculationHistoryItem(
-        LocalDateTime.now().minusDays(1),
-        "1m + 1m",
-        "1 m + 1 m",
-        "2 m"
-    )
-)
 
 @Preview
 @Composable
 private fun DefaultPreview() {
+
+    val testCalculationHistory = listOf(
+        CalculationHistoryItem(
+            LocalDateTime.now().minusDays(10),
+            "1 kilometer + 5 meter",
+            "1 kilometer + 5 meter",
+            "1005 m",
+            stringToLaTeX("1005 m")
+        ),
+        CalculationHistoryItem(
+            LocalDateTime.now().minusDays(1),
+            "1m + 1m",
+            "1 m + 1 m",
+            "2 m",
+            stringToLaTeX("2 m")
+        ),
+        CalculationHistoryItem(
+            LocalDateTime.now().minusDays(1).minusHours(2),
+            "1m + 1m",
+            "1 m + 1 m",
+            "2 m",
+            stringToLaTeX("2 m")
+        ),
+        CalculationHistoryItem(
+            LocalDateTime.now().minusMinutes(20),
+            "1km + 5m",
+            "1 kilometer + 5 meter",
+            "1005 m",
+            stringToLaTeX("1005 m")
+        )
+    )
+
     CalculatorScreenContent(
         input = { TextFieldValue("1+1") },
         onInputChanged = {},
@@ -251,6 +271,37 @@ private fun EmptyPreview() {
 @Preview
 @Composable
 private fun AutocompletePreview() {
+
+        val testCalculationHistory = listOf(
+        CalculationHistoryItem(
+            LocalDateTime.now().minusDays(10),
+            "1 kilometer + 5 meter",
+            "1 kilometer + 5 meter",
+            "1005 m",
+            stringToLaTeX("1005 m")
+        ),
+        CalculationHistoryItem(
+            LocalDateTime.now().minusDays(1),
+            "1m + 1m",
+            "1 m + 1 m",
+            "2 m",
+            stringToLaTeX("2 m")
+        ),
+        CalculationHistoryItem(
+            LocalDateTime.now().minusDays(1).minusHours(2),
+            "1m + 1m",
+            "1 m + 1 m",
+            "2 m",
+            stringToLaTeX("2 m")
+        ),
+        CalculationHistoryItem(
+            LocalDateTime.now().minusMinutes(20),
+            "1km + 5m",
+            "1 kilometer + 5 meter",
+            "1005 m",
+            stringToLaTeX("1005 m")
+        )
+    )
 
     val list = listOf(
         AutocompleteItem("Tesla", "M", "T"),

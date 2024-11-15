@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jherkenhoff.qalculate.data.model.CalculationHistoryItem
+import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -150,25 +151,29 @@ private fun DefaultPreview() {
             LocalDateTime.now().minusDays(10),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m"
+            "2 m",
+            stringToLaTeX("2 m")
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m"
+            "2 m",
+            stringToLaTeX("2 m")
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1).minusHours(2),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m"
+            "2 m",
+            stringToLaTeX("2 m")
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusMinutes(20),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m"
+            "2 m",
+            stringToLaTeX("2 m")
         )
     )
 

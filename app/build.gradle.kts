@@ -128,6 +128,9 @@ dependencies {
     implementation(libs.androidx.compose.material.iconsExtended)
     implementation(libs.qalculate)
     implementation(libs.kotlinx.serialization.json)
+    implementation("androidx.vectordrawable:vectordrawable:1.0.0")
+    implementation("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+    implementation("com.github.gregcockroft:AndroidMath:v1.0.0")
     ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)

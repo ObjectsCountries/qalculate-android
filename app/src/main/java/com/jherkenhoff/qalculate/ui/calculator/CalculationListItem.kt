@@ -16,34 +16,62 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jherkenhoff.qalculate.ui.common.mathExpressionFormatter
+import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
+import android.graphics.Canvas
 
 @Composable
 fun ColumnScope.CalculationListItem(
     parsed: String,
     result: String,
+    latex: Boolean = true,
     compact: Boolean = true
 ) {
-
-    Text(
-        mathExpressionFormatter(parsed),
-        style = MaterialTheme.typography.bodyMedium
-    )
-    Box(
-        contentAlignment = Alignment.CenterEnd,
-        modifier = Modifier
-            .fillMaxWidth()
-            .defaultMinSize(minHeight = 80.dp)
-    ) {
-        AutoSizeText(
-            text = mathExpressionFormatter(result),
-            modifier = Modifier.fillMaxWidth(),
-            alignment = Alignment.CenterEnd,
-            style = MaterialTheme.typography.displayMedium,
-            minTextSize = 14.sp,
-            maxTextSize = 50.sp,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
+    if (latex) {
+        Text(
+            mathExpressionFormatter(parsed),
+            style = MaterialTheme.typography.bodyMedium
         )
+        // var canvas = Canvas()
+        Box(
+            contentAlignment = Alignment.CenterEnd,
+            modifier = Modifier
+                .fillMaxWidth()
+                .defaultMinSize(minHeight = 80.dp)
+        ) {
+            AutoSizeText(
+                text = stringToLaTeX(result),
+                modifier = Modifier.fillMaxWidth(),
+                alignment = Alignment.CenterEnd,
+                style = MaterialTheme.typography.displayMedium,
+                minTextSize = 14.sp,
+                maxTextSize = 50.sp,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+
+    } else {
+        Text(
+            mathExpressionFormatter(parsed),
+            style = MaterialTheme.typography.bodyMedium
+        )
+        Box(
+            contentAlignment = Alignment.CenterEnd,
+            modifier = Modifier
+                .fillMaxWidth()
+                .defaultMinSize(minHeight = 80.dp)
+        ) {
+            AutoSizeText(
+                text = mathExpressionFormatter(result),
+                modifier = Modifier.fillMaxWidth(),
+                alignment = Alignment.CenterEnd,
+                style = MaterialTheme.typography.displayMedium,
+                minTextSize = 14.sp,
+                maxTextSize = 50.sp,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
     }
 }
 
