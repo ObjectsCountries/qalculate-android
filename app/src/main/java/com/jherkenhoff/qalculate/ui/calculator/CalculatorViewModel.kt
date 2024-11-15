@@ -22,7 +22,6 @@ import com.jherkenhoff.qalculate.domain.AutocompleteResult
 import com.jherkenhoff.qalculate.domain.AutocompleteUseCase
 import com.jherkenhoff.qalculate.domain.CalculateUseCase
 import com.jherkenhoff.qalculate.domain.ParseUseCase
-import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
@@ -65,8 +64,7 @@ class CalculatorViewModel @Inject constructor(
                 LocalDateTime.now(),
                 inputTextFieldValue.text,
                 parsedString,
-                resultString,
-                stringToLaTeX(resultString)
+                resultString
             )
         )
 

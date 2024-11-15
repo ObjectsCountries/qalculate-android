@@ -39,7 +39,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jherkenhoff.qalculate.data.ScreenSettingsRepository
 import com.jherkenhoff.qalculate.data.model.CalculationHistoryItem
 import com.jherkenhoff.qalculate.domain.AutocompleteItem
-import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.runBlocking
 import java.time.LocalDateTime
@@ -212,29 +211,25 @@ private fun DefaultPreview() {
             LocalDateTime.now().minusDays(10),
             "1 kilometer + 5 meter",
             "1 kilometer + 5 meter",
-            "1005 m",
-            stringToLaTeX("1005 m")
+            "1005 m"
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m",
-            stringToLaTeX("2 m")
+            "2 m"
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1).minusHours(2),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m",
-            stringToLaTeX("2 m")
+            "2 m"
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusMinutes(20),
             "1km + 5m",
             "1 kilometer + 5 meter",
-            "1005 m",
-            stringToLaTeX("1005 m")
+            "1005 m"
         )
     )
 
@@ -277,29 +272,25 @@ private fun AutocompletePreview() {
             LocalDateTime.now().minusDays(10),
             "1 kilometer + 5 meter",
             "1 kilometer + 5 meter",
-            "1005 m",
-            stringToLaTeX("1005 m")
+            "1005 m"
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m",
-            stringToLaTeX("2 m")
+            "2 m"
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusDays(1).minusHours(2),
             "1m + 1m",
             "1 m + 1 m",
-            "2 m",
-            stringToLaTeX("2 m")
+            "2 m"
         ),
         CalculationHistoryItem(
             LocalDateTime.now().minusMinutes(20),
             "1km + 5m",
             "1 kilometer + 5 meter",
-            "1005 m",
-            stringToLaTeX("1005 m")
+            "1005 m"
         )
     )
 

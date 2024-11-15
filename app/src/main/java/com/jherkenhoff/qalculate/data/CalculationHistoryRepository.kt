@@ -1,7 +1,6 @@
 package com.jherkenhoff.qalculate.data
 
 import com.jherkenhoff.qalculate.data.model.CalculationHistoryItem
-import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import java.time.LocalDateTime
@@ -22,8 +21,7 @@ class CalculationHistoryRepository @Inject constructor() {
                 LocalDateTime.now(),
                 input,
                 parsed,
-                result,
-                stringToLaTeX(result)
+                result
             )
         )
     }

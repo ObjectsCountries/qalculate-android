@@ -57,8 +57,8 @@
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/eaab0b3eae3e1f91c7e5c11582587926/transformed/jetified-junit-4.12.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/d2f0e3afd9741d999979d2a6cb9f7dd9/transformed/jetified-junit-1.2.1-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/5093d32f98037df7e6359a4533ee1bae/transformed/jetified-kotlin-stdlib-2.0.20.jar"/>
-	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/1f42253f06d2eb1713c5bf1a9c078c67/transformed/jetified-kotlin-stdlib-jdk8-1.8.20.jar"/>
-	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/94c763499703368b93a574bd10d7fdcb/transformed/jetified-kotlin-stdlib-jdk7-1.8.20.jar"/>
+	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/099a28a4358f74b19d2b10589225b43c/transformed/jetified-kotlin-stdlib-jdk8-1.9.10.jar"/>
+	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/cfca177f88ca8fab65194c5edce4d893/transformed/jetified-kotlin-stdlib-jdk7-1.9.10.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/5736bd8cc226ff59327e6e8ba54fb0b4/transformed/jetified-kotlinx-coroutines-android-1.7.3.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/2dffee450a90eb4dd54f33e22481d1fd/transformed/jetified-kotlinx-coroutines-core-jvm-1.7.3.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/b9b4ad8e1d2954b839cd006ea939caf4/transformed/jetified-kotlinx-coroutines-test-jvm-1.7.3.jar"/>
@@ -81,7 +81,9 @@
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/9a94012d6394afffba5a8320a2c28436/transformed/jetified-material-ripple-release-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/b6a6a2bfe5e8af2fe5e009298c5456c1/transformed/jetified-material3-release-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/184eab12c8dbfade004c42d9c098097a/transformed/jetified-navigation-compose-2.8.1-api.jar"/>
+	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/d6ab25f0cefecc539b29007ab4b21a97/transformed/jetified-okio-jvm-3.6.0.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/816285652051cbd0057e37c910bc7a81/transformed/jetified-okio-jvm-3.4.0.jar"/>
+	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/a7e1b4feabd21ed1a3accf9b2e7ab949/transformed/jetified-RenderX-1.0.0-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/ec8fcd8d73419f8d260d5db72ed64dfa/transformed/jetified-runtime-release-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/b00264e5399272a17042625b56280003/transformed/jetified-runtime-saveable-release-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/0399c23e448c723889a750af4b0efb59/transformed/jetified-savedstate-1.2.1-api.jar"/>
@@ -114,6 +116,7 @@
 	<classpathentry kind="lib" path="/home/kasra/Coding Projects/Qalculate Android/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/Coding Projects/Qalculate Android/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debugAndroidTest/processDebugAndroidTestResources/R.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/fc26dd2fb935781150a966860ab65ee2/transformed/runner-1.1.0-alpha3-api.jar"/>
+	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/55013047e8bc2fcb855d6ee81b8932b5/transformed/vectordrawable-1.1.0-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/92ee724492cfe11500f2df8da1cda2af/transformed/vectordrawable-1.0.0-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/5069f9ec6333509fc497ca0b59a65d66/transformed/versionedparcelable-1.1.1-api.jar"/>
 	<classpathentry kind="lib" path="/home/kasra/.gradle/caches/transforms-4/3bd52f613d67997aa90858fb75a1434a/transformed/viewpager-1.0.0-api.jar"/>

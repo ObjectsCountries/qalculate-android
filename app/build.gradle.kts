@@ -131,6 +131,7 @@ dependencies {
     implementation("androidx.vectordrawable:vectordrawable:1.0.0")
     implementation("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
     implementation("com.github.gregcockroft:AndroidMath:v1.0.0")
+    implementation("com.github.tech-pw:RenderX:1.0.0")
     ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)

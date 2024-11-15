@@ -3,6 +3,7 @@ package com.jherkenhoff.qalculate.ui.calculator
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.padding
@@ -18,13 +19,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import com.agog.mathdisplay.MTMathView
 import com.jherkenhoff.qalculate.ui.common.mathExpressionFormatter
 import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
+import live.pw.renderX.RenderX
 
 
 private val HistoryItemShape = RoundedCornerShape(20.dp, 20.dp, 4.dp, 20.dp)
@@ -36,6 +42,7 @@ fun HistoryItem(
     parsedText: String,
     resultText: String,
     modifier: Modifier = Modifier,
+    latex: Boolean = true,
     onTextToInput: (String) -> Unit = {},
 ) {
 
@@ -89,15 +96,20 @@ fun HistoryItem(
                 mathExpressionFormatter(parsedText, color=false),
                 style = MaterialTheme.typography.bodySmall
             )
-            AutoSizeText(
-                text = stringToLaTeX(resultText),
-                alignment = Alignment.CenterEnd,
-                style = MaterialTheme.typography.displayMedium,
-                minTextSize = 14.sp,
-                maxTextSize = 30.sp,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
+            if (latex) {
+                RenderX(modifier, stringToLaTeX(resultText), textSize=24f, textColor=if (isSystemInDarkTheme()) Color.White.toArgb() else Color.DarkGray.toArgb())
+            }
+            else {
+                AutoSizeText(
+                    text = stringToLaTeX(resultText),
+                    alignment = Alignment.CenterEnd,
+                    style = MaterialTheme.typography.displayMedium,
+                    minTextSize = 14.sp,
+                    maxTextSize = 30.sp,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
         }
     }
 

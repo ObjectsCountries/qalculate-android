@@ -1,5 +1,6 @@
 package com.jherkenhoff.qalculate.ui.calculator
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -11,13 +12,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.platform.LocalContext
 import com.jherkenhoff.qalculate.ui.common.mathExpressionFormatter
 import com.jherkenhoff.qalculate.ui.common.stringToLaTeX
-import android.graphics.Canvas
+import com.agog.mathdisplay.MTMathView
+import live.pw.renderX.RenderX
 
 @Composable
 fun ColumnScope.CalculationListItem(
@@ -31,23 +36,13 @@ fun ColumnScope.CalculationListItem(
             mathExpressionFormatter(parsed),
             style = MaterialTheme.typography.bodyMedium
         )
-        // var canvas = Canvas()
         Box(
             contentAlignment = Alignment.CenterEnd,
             modifier = Modifier
                 .fillMaxWidth()
                 .defaultMinSize(minHeight = 80.dp)
         ) {
-            AutoSizeText(
-                text = stringToLaTeX(result),
-                modifier = Modifier.fillMaxWidth(),
-                alignment = Alignment.CenterEnd,
-                style = MaterialTheme.typography.displayMedium,
-                minTextSize = 14.sp,
-                maxTextSize = 50.sp,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
+            RenderX(Modifier.fillMaxWidth().defaultMinSize(minHeight = 80.dp), stringToLaTeX(result), textSize=24f, textColor=if (isSystemInDarkTheme()) Color.White.toArgb() else Color.DarkGray.toArgb())
         }
 
     } else {
